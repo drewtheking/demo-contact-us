@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - WM Edlaw</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        /* Header */
+        header {
+            background-color: #3d4a52;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .phone {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #a8d5e8;
+        }
+
+        .btn-contact {
+            background-color: #4a7ba7;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 13px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-contact:hover {
+            background-color: #3a6a94;
+        }
+
+        /* Hero Section with Image */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('contact us bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 120px 40px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 450px;
+            color: white;
+        }
+
+        .hero-left {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .btn-client-portal {
+            background-color: #0052a3;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-client-portal:hover {
+            background-color: #003d7a;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Main Content Section */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        .content-section h2 {
+            font-size: 22px;
+            color: #0d4a94;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .content-section p {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        /* Contact Form */
+        .form-section {
+            background-color: white;
+            padding: 0;
+        }
+
+        .form-section h3 {
+            font-size: 20px;
+            color: #0d4a94;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: #333;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .form-group label .required {
+            color: #c0392b;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 13px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #0d4a94;
+            box-shadow: 0 0 4px rgba(13, 74, 148, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-submit {
+            background-color: #0d4a94;
+            color: white;
+            padding: 11px 28px;
+            border: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-submit:hover {
+            background-color: #0a3570;
+        }
+
+        .privacy-notice {
+            font-size: 11px;
+            color: #888;
+            margin-top: 12px;
+            line-height: 1.6;
+        }
+
+        /* Two Box Section */
+        .boxes-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .box {
+            padding: 35px;
+            border-radius: 4px;
+        }
+
+        .box-dark {
+            background-color: #1a3d5c;
+            color: white;
+        }
+
+        .box-light {
+            background-color: #b8d4e8;
+            color: #333;
+        }
+
+        .box h3 {
+            font-size: 18px;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .box-item {
+            margin-bottom: 20px;
+        }
+
+        .box-item strong {
+            display: block;
+            color: #f4a460;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .box-item p {
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .box-light .box-item strong {
+            color: #1a3d5c;
+        }
+
+        /* Consultation Text */
+        .consultation-text {
+            color: #1a3d5c;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* Buttons Group */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-option {
+            padding: 13px;
+            border: 2px solid #b8d4e8;
+            background-color: white;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+
+        .btn-option:hover {
+            background-color: #b8d4e8;
+            color: white;
+        }
+
+        /* Footer */
+        .footer-banner {
+            background-color: #666;
+            color: white;
+            padding: 25px 40px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .footer-section {
+            background-color: white;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr auto auto 1fr;
+            gap: 40px;
+            align-items: center;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-left {
+            font-size: 12px;
+        }
+
+        .footer-left strong {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .footer-right {
+            text-align: right;
+            font-size: 12px;
+        }
+
+        .footer-right a {
+            color: #0d4a94;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-right a:hover {
+            text-decoration: underline;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .social-icons a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #0d4a94;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-grid,
+            .boxes-section {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .footer-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-right {
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <div class="phone">808-763-9009</div>
+            <div class="logo">wmedlaw
+            </div>
+        </div>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#services">Legal Services</a>
+            <a href="#serve">Who We Serve</a>
+            <a href="#payments">Payments</a>
+            <a href="#resources">Resources</a>
+            <a href="#contact" class="btn-contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-left">
+            <a href="#" class="btn-client-portal">Sign In to Client Portal</a>
+            <h1>CONTACT US</h1>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="content-grid">
+            <!-- Left Column -->
+            <div class="content-section">
+                <h2>Talk to an Attorney Who Handles Your Case Personally</h2>
+                <p>If you've been injured because of someone else's negligence, getting clear legal guidance shouldn't be complicated — and it shouldn't cost you anything. At the Law Offices of Michael J. Brennan, we offer free, no-obligation case evaluations to help you understand your rights, your options, and what steps to take next.</p>
+                <p>You will not be passed off to a case manager or call center. When you contact this office, you'll hear directly from Attorney Michael J. Brennan — the person who will handle your case from start to finish.</p>
+                <p>Whether you're dealing with a serious car crash, nursing home neglect, a medical error, or the wrongful death of a loved one, we're here to help you get answers.</p>
+            </div>
+
+            <!-- Right Column - Form -->
+            <div class="form-section">
+                <h3>How to Get Started</h3>
+                <p style="font-size: 13px; color: #555; margin-bottom: 20px;">Fill out the short contact form on this page, or call the office directly. We respond quickly to inquiries and respect your time and privacy. Once we review your situation, we'll schedule a free consultation to discuss your potential case in more detail.</p>
+                
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">SUBMIT</button>
+
+                    <div class="privacy-notice">
+                        We respect your privacy. Do not send confidential or time-sensitive information through this website or email as attorney-client relationships are only established after consultation and signed agreement.
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Two Box Section -->
+        <div class="boxes-section">
+            <div class="box box-dark">
+                <h3>PURPOSE OF AN INITIAL CONSULTATION</h3>
+                <div class="box-item">
+                    <strong>+ LEARN</strong>
+                    <p>A consultation helps us understand your particular legal concern</p>
+                </div>
+                <div class="box-item">
+                    <strong>+ INFORM</strong>
+                    <p>It also gives us a chance to go over your various legal options</p>
+                </div>
+                <div class="box-item">
+                    <strong>+ RESOLVE</strong>
+                    <p>Together we determine the best path forward to meet your legal needs</p>
+                </div>
+            </div>
+
+            <div class="box box-light">
+                <h3>Book a Consultation</h3>
+                <p class="consultation-text">Are you a New Client or Existing Client?</p>
+                <div class="button-group">
+                    <button class="btn-option">NEW CLIENT</button>
+                    <button class="btn-option">EXISTING CLIENT</button>
+                    <button class="btn-option">NEXT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Banner -->
+    <div class="footer-banner">
+        DEFENDING MILITARY HEALTHCARE PROFESSIONALS GLOBALLY
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-section">
+        <div class="footer-left">
+            <strong>808-763-9009</strong>
+            Houston Office<br>
+            City, State 12345<br><br>
+            Austin Office<br>
+            City, State 12345
+        </div>
+        <div style="text-align: center; font-size: 12px; color: #888;">
+            San Antonio Office<br>
+            City, State 12345
+        </div>
+        <div style="text-align: center; font-size: 12px; color: #888;">
+            Other Locations<br>
+            Available
+        </div>
+        <div class="footer-right">
+            <div style="margin-bottom: 15px;">
+                <a href="#home">Home</a><br>
+                <a href="#about">About Us</a><br>
+                <a href="#services">Legal Services</a><br>
+                <a href="#faq">FAQ</a><br>
+                <a href="#resources">Resources</a><br>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="social-icons">
+                <a href="#">f</a>
+                <a href="#">in</a>
+                <a href="#">ig</a>
+                <a href="#">x</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
