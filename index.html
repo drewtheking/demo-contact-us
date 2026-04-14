@@ -84,9 +84,8 @@
             padding: 120px 40px;
             position: relative;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
             min-height: 450px;
             color: white;
         }
@@ -94,7 +93,15 @@
         .hero-left {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+        }
+
+        .hero-right {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-end;
         }
 
         .btn-client-portal {
@@ -393,7 +400,13 @@
             }
 
             .hero {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .hero-right {
+                align-items: center;
             }
 
             .hero h1 {
@@ -447,8 +460,12 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-left">
-            <a href="#" class="btn-client-portal">Sign In to Client Portal</a>
             <h1>CONTACT US</h1>
+        </div>
+        <div class="hero-right">
+            <a href="#" class="btn-client-portal">Sign In to Client Portal</a>
+            <a href="#payments" class="btn-client-portal">Payments</a>
+            <a href="#contact" class="btn-client-portal">Contact Us</a>
         </div>
     </section>
 
